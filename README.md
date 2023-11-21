@@ -1,2 +1,2 @@
 # news_app
-Zmiana nr2 w życiu
+Zmiana nr2 w zyciu
