@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import logo from './logo.svg';
 import './App.css';
+
+import NewsItem from './components/NewsItem/NewsItem';
 
 function App() {
   // Hook stanu do przechowywania elementów menu
@@ -16,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <ul>
           {menuItems.map((item, index) => (
             // Tworzenie listy elementów menu
@@ -27,8 +31,44 @@ function App() {
           ))}
         </ul>
       </header>
+      <main>
+        <NewsItem
+          title="Tytuł wiadomości"
+          excerpt="Krótki opis artykułu..."
+          imageUrl="link-do-obrazka.jpg"
+        />
+        {/* Możesz dodać więcej komponentów NewsItem tutaj */}
+      </main>
     </div>
   );
 }
 
 export default App;
+
+
+
+// import logo from './logo.svg';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
