@@ -1,0 +1,17 @@
+[
+  "../src/App.css",
+  "../src/App.js",
+  "../src/App.test.js",
+  "../src/components",
+  "../src/components/NewsItem",
+  "../src/components/NewsItem/NewsItem.css",
+  "../src/components/NewsItem/NewsItem.js",
+  "../src/components/NewsList",
+  "../src/components/NewsList/NewsList.js",
+  "../src/file_tree.js",
+  "../src/index.css",
+  "../src/index.js",
+  "../src/logo.svg",
+  "../src/reportWebVitals.js",
+  "../src/setupTests.js"
+]

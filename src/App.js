@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import logo from './londynek_logo_square_192.png';
 import './App.css';
 
-import NewsItem from './components/NewsItem/NewsItem';
+// import NewsItem from './components/NewsItem/NewsItem';
+import NewsList from './components/NewsList/NewsList';
 
 function App() {
   // Hook stanu do przechowywania elementów menu
@@ -17,6 +19,7 @@ function App() {
   }, []); // Pusta tablica jako drugi argument oznacza, że efekt uruchomi się tylko raz
 
   return (
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -32,14 +35,11 @@ function App() {
         </ul>
       </header>
       <main>
-        <NewsItem
-          title="Tytuł wiadomości"
-          excerpt="Krótki opis artykułu..."
-          imageUrl="link-do-obrazka.jpg"
-        />
+        <NewsList />
         {/* Możesz dodać więcej komponentów NewsItem tutaj */}
       </main>
     </div>
+    
   );
 }
 

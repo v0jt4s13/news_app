@@ -1,0 +1,53 @@
+{
+	"articles": [
+		{
+			"id": 2,
+			"title": "IBB Polonia Londyn pokonała Richmond Docklands",
+			"publish_date": "2023-10-08T12:30",
+			"images": [
+				{
+					"img_url": "https://assets.aws.londynek.net/images/jdnews-agency/2191248/371525-202311210951-lg.jpg.webp?t=23",
+					"img_anchor": "Jakis opis do zdjcia"
+				}
+			],
+			"canonical_url": "news/20231008T1230/poradnik/rynek_praca_wielka_brytania/2",
+			"lang_avail": [
+				"pl",
+				"en"
+			]
+		},
+		{
+			"id": 12,
+			"title": "Holandia: Dworce kolejowe w kraju i lotnisko w Amsterdamie to \"wylęgarnie antysemityzmu\"",
+			"publish_date": "2023-10-10T12:00",
+			"images": [
+				{
+					"img_url": "https://assets.aws.londynek.net/images/jdnews-agency/2191248/371534-202311211203-lg.jpg.webp?t=1700568300",
+					"img_anchor": "Jakis opis do zdjcia"
+				},
+				{
+					"img_url": "https://assets.aws.londynek.net/images/jdnews-agency/2191248/371469-202311201558-lg.jpg.webp?t=1700495953",
+					"img_anchor": "Jakis opis do zdjcia"
+				}
+			],
+			"canonical_url": "news/20231010T1200/wielka_brytania/12",
+			"lang_avail": [
+				"pl",
+				"en"
+			]
+		},
+		{
+			"id": 123,
+			"title": "Pieniądze za przeprowadzkę? W tych miejscach we Włoszech możesz na to liczyć!",
+			"publish_date": "2023-10-10T10:10",
+			"images": [
+				{
+					"img_url": "https://assets.aws.londynek.net/images/jdnews/2251908/369854-202311061015-lg.jpg.webp?t=99",
+					"img_anchor": "Jakis opis do zdjcia"
+				}
+			],
+			"canonical_url": "news/20231010T1010/polska/123",
+			"lang_avail": "pl"
+		}
+	]
+}
