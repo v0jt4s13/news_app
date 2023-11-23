@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const file_list = '../public/json_static/fileList.json';
-const dirname = '../';
+const file_list = 'public/json_static/fileList.json';
+const dirname = './';
 const directoryPath = path.join(dirname, 'src'); // Zmodyfikuj ścieżkę w zależności od struktury projektu
+const directoryPath2 = path.join(dirname, 'public');
+console.log('directoryPath:',directoryPath);
 
 const listFiles = (dir, fileList = []) => {
   fs.readdirSync(dir).forEach(file => {
@@ -16,5 +18,6 @@ const listFiles = (dir, fileList = []) => {
   return fileList;
 };
 
-const files = listFiles(directoryPath);
-fs.writeFileSync(file_list, JSON.stringify(files, null, 2));
+let files_list = listFiles(directoryPath2, listFiles(directoryPath));
+
+fs.writeFileSync(file_list, JSON.stringify(files_list, null, 2));

@@ -11,6 +11,9 @@
 # production
 /build
 
+# test app build
+# /TestNewsApp
+
 # misc
 .DS_Store
 .env.local
