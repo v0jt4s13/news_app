@@ -48,6 +48,19 @@
 			],
 			"canonical_url": "news/20231010T1010/polska/123",
 			"lang_avail": "pl"
+		},
+		{
+			"id": 130,
+			"title": "Skrajna prawica wygrywa wybory w Holandii. Co może to zmienić w UE?",
+			"publish_date": "2023-11-23 T11:00",
+			"images": [
+				{
+					"img_url": "https://www.national-geographic.pl/media/cache/big/uploads/media/default/0014/85/ciekawostki-o-holandii.jpg",
+					"img_anchor": "Jakis opis do zdjcia"
+				}
+			],
+			"canonical_url": "nwm co tu dać (Krzysiek)",
+			"lang_avail": "pl"
 		}
 	]
 }
