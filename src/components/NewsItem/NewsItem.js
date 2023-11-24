@@ -2,7 +2,8 @@
 import React from 'react';
 import './NewsItem.css';
 
-function NewsItem({ title, excerpt, imageUrl }) {
+// function NewsItem({ title, excerpt, imageUrl }) {}
+function NewsItem({ id, title, imageUrl, excerpt }) {
   return (
     <div className="news-item">
       <img src={imageUrl} alt={title} className="news-image" />

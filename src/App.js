@@ -5,7 +5,7 @@ import './App.css';
 
 // import NewsItem from './components/NewsItem/NewsItem';
 import NewsList from './components/NewsList/NewsList';
-import FileList from './components/FileList/FileList';
+/*import FileList from './components/FileList/FileList';*/
 
 function App() {
   // Hook stanu do przechowywania elementów menu
@@ -42,7 +42,7 @@ function App() {
       </main>
       
       <footer>
-        <FileList />
+        FileList
       </footer>
       
     </div>
