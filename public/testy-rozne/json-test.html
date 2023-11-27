@@ -1,0 +1,10 @@
+<html>
+	<head></head>
+	<body>
+		<pre><code id="json-container"></code></pre>
+		<script>
+			const data = [{"ID": 50, "Field": "translation_p", "Type": "2", "Title": "acs-subsite.Order_translation", "Req": "f", "Width": "0", "ID conn": "0", "Hidden": "f", "Max char": 0, "DataType": "char", "Js Bu Pe Au Jo BS Ac": [ "X", "X", "X", "X", "X", "X", "X" ], "Sort": 50, "Lang": null, "Group": 0, "GroupSort": 0}, {"ID": 48, "Field": "english_p", "Type": "2", "Title": "acs-subsite.Other_version", "Req": "f", "Width": "0", "ID conn": "0", "Hidden": "f", "Max char": 0, "DataType": "char", "Js Bu Pe Au Jo BS Ac": [ "X", "X", "X", "X", "X", "X", "X" ], "Sort": 50, "Lang": null, "Group": 0, "GroupSort": 0}, {"ID": 25, "Field": "category_id", "Type": "4", "Title": "acs-subsite.Category", "Req": "t", "Width": "0", "ID conn": "0", "Hidden": "f", "Max char": 0, "DataType": "int", "Js Bu Pe Au Jo BS Ac": [ "O", "O", "O", "X", "O", "O", "O" ], "Sort": 9, "Lang": null, "Group": 10, "GroupSort": 0}]
+			document.getElementById('json-container').innerHTML = JSON.stringify(data, null, 2);
+		</script>
+	</body>
+</html>
