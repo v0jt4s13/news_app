@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
 
 const endpoint = '/json_static/articles.json';
+// const endpoint = 'http://localhost/v1/news';
 
 function NewsList() {
   const [articles, setArticles] = useState([]);
