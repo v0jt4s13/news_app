@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage.js';
+import PrettyJson from './components/PrettyJson/PrettyJson.js';
 import ArticlePage from './components/ArticlePage/ArticlePage.js';
 import { Link } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/PrettyJson" element={<PrettyJson />} />
         </Routes>
       </div>
     </Router>
