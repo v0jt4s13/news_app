@@ -1,18 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './PrettyJson.css';
 
 function PrettyJson() {
   const [inputJson, setInputJson] = useState('');
   const [formattedJson, setFormattedJson] = useState('');
+  const [selectedFile, setSelectedFile] = useState('');
+
+  const jsonFiles = ['menu.json', 'articles.json', 'forms-fields.json']; // Lista plików
 
   const handleInputChange = (event) => {
     setInputJson(event.target.value);
   };
 
+  const handleFileChange = async (event) => {
+    const filename = event.target.value;
+    setSelectedFile(filename);
+    if (filename) {
+      try {
+        const response = await fetch(`/json_static/${filename}`);
+        const data = await response.json();
+        setInputJson(JSON.stringify(data));
+        setFormattedJson(JSON.stringify(data, null, 2));
+      } catch (error) {
+        console.error('Error loading JSON file:', error);
+        setInputJson('');
+        setFormattedJson('Invalid JSON or Error Loading File');
+      }
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-      // Formatuj JSON i ustaw sformatowane dane
       const parsed = JSON.parse(inputJson);
       setFormattedJson(JSON.stringify(parsed, null, 2));
     } catch (error) {
@@ -25,11 +44,22 @@ function PrettyJson() {
     <div>
       <h2>JSON Formatter</h2>
       <form onSubmit={handleSubmit}>
-        <textarea 
+        <label>
+          Choose JSON File:
+          <select value={selectedFile} onChange={handleFileChange}>
+            <option value="">Select a file</option>
+            {jsonFiles.map((file, index) => (
+              <option key={index} value={file}>{file}</option>
+            ))}
+          </select>
+        </label>
+        <p>
+					<textarea 
           value={inputJson} 
           onChange={handleInputChange}
           placeholder="Wpisz lub wklej JSON tutaj"
-        ></textarea>
+        	></textarea>
+				</p>
         <p><button type="submit">Send</button></p>
       </form>
       <pre><code>{formattedJson}</code></pre>
@@ -38,6 +68,49 @@ function PrettyJson() {
 }
 
 export default PrettyJson;
+
+
+
+// import React, { useState } from 'react';
+// import './PrettyJson.css';
+
+// function PrettyJson() {
+//   const [inputJson, setInputJson] = useState('');
+//   const [formattedJson, setFormattedJson] = useState('');
+
+//   const handleInputChange = (event) => {
+//     setInputJson(event.target.value);
+//   };
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     try {
+//       // Formatuj JSON i ustaw sformatowane dane
+//       const parsed = JSON.parse(inputJson);
+//       setFormattedJson(JSON.stringify(parsed, null, 2));
+//     } catch (error) {
+//       console.error('Invalid JSON:', error);
+//       setFormattedJson('Invalid JSON');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>JSON Formatter</h2>
+//       <form onSubmit={handleSubmit}>
+//         <textarea 
+//           value={inputJson} 
+//           onChange={handleInputChange}
+//           placeholder="Wpisz lub wklej JSON tutaj"
+//         ></textarea>
+//         <p><button type="submit">Send</button></p>
+//       </form>
+//       <pre><code>{formattedJson}</code></pre>
+//     </div>
+//   );
+// }
+
+// export default PrettyJson;
 
 
 
