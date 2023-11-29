@@ -47,14 +47,14 @@ body,
 .test-logo {
   width: -webkit-fill-available;
 }
-ul {
+.cl-ul {
   list-style: none;
   background-color: rgb(3, 83, 83);
   padding-right: 40px;
 }
-li {
+.cl-li {
   padding: 15px;
 }
-li:hover {
+.cl-li:hover {
   background-color: rgb(0, 26, 255);
 }

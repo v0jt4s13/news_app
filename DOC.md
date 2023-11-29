@@ -19,4 +19,3 @@ Pamiętaj że w każdej chili możesz wrócić do punktu wyjscia nie tracąc cza
 
 # Dalsza część dokumentacji ....
 
-npm install react-router-dom

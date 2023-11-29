@@ -15,13 +15,17 @@ function App() {
     <Router>
       <div>
         {/* Linki do nawigacji */}
+        from App nav module<br></br>
         <nav>
-          <Link to="/">Home</Link>
+          <ul className="cl-ul">
+            <Link to="/"><li className="cl-li">Home</li></Link>
+            <Link to="/PrettyJson"><li className="cl-li">PrettyJson</li></Link>
+          </ul>
         </nav>
 
         {/* Definicja tras */}
         <Routes>
-          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/wiadomosci/:id" element={<ArticlePage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/PrettyJson" element={<PrettyJson />} />
         </Routes>

@@ -18,14 +18,15 @@ function HomePage() {
   return (
     <div className="HomePage">
       <header className="HomePage-header">
+				from HomePage header module<br></br>
         <img src={logo} className="HomePage-logo" alt="logo" />
 				
         <ul>
           {menuItems.map((item, index) => (
             // Tworzenie listy elementów menu
-            <li key={index}>
+            <li id={index}>
               <a href={item.url} target="_blank" rel="noopener noreferrer">
-                {item.name}
+                AAA-{item.name}
               </a>
             </li>
           ))}
