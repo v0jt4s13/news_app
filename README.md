@@ -74,3 +74,66 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### npm install react-router-dom
 
 ### npm install he
+
+
+## Struktura katalogów i plików projektu
+app/
+├── src/
+│   ├── components/       						# Współdzielone komponenty UI
+│   │   ├── AdItem.js               	# Komponent pojedynczego ogłoszenia na liście
+│   │   ├── ProfileForm.js          	# Formularz do edycji danych profilu
+│   │   ├── Button.js               	# Własny przycisk
+│   │   ├── InputField.js           	# Pole tekstowe
+│   │   ├── Header.js               	# Nagłówek aplikacji
+│   │   ├── Footer.js               	# Stopka aplikacji
+│   │   ├── AdCard.js               	# Karta ogłoszenia
+│   │   └── ...
+│   ├── config/                   		# Konfiguracja aplikacji
+│   │   ├── AppConfig.js          		# Główne ustawienia aplikacji
+│   │   ├── APIConfig.js          		# Ustawienia dotyczące API (np. URL)
+│   │   └── ThemeConfig.js        		# Konfiguracja motywu (kolory, fonty)
+│   │   └── ...
+│   ├── constants/                		# Stałe używane w aplikacji (np. URL endpointów)
+│   │   ├── ActionTypes.js        		# Typy akcji dla Redux/Context API
+│   │   ├── NavigationRoutes.js   		# Nazwy tras nawigacyjnych
+│   │   ├── ErrorMessages.js      		# Stałe komunikaty błędów
+│   │   └── ...
+│   ├── navigation/       						# Konfiguracja nawigacji (React Navigation)
+│   │   ├── AppNavigator.js         	# Główny navigator aplikacji
+│   │   ├── AuthNavigator.js        	# Navigator dla procesu autoryzacji
+│   │   ├── TabNavigator.js         	# Navigator dla nawigacji typu tab
+│   │   └── StackNavigator.js       	# Stack navigator dla szczegółowych ekranów
+│   │   └── ...
+│   ├── screens/          						# Ekrany aplikacji (np. Login, Ogłoszenia, Profil)
+│   │   ├── AdvertisementsScreen/
+│   │   │   ├── AdsList.js           	# Wyświetla listę ogłoszeń, AdvertisementsService + AdItem
+│   │   │   ├── AdDetail.js         	# Szczegóły konkretnego ogłoszenia
+│   │   │   ├── AdCreate.js         	# Formularz tworzenia nowego ogłoszenia
+│   │   │   └── AdEdit.js           	# Formularz edycji istniejącego ogłoszenia
+│   │   │   └── ...
+│   │   ├── LoginScreen/
+│   │   │   └── ...
+│   │   ├── ProfileScreen/
+│   │   │   ├── UserProfile.js      	# Ekran profilu użytkownika
+│   │   │   ├── EditProfile.js      	# Ekran do edycji danych profilu
+│   │   │   ├── ChangePassword.js   	# Opcjonalnie, ekran zmiany hasła
+│   │   │   └── ...
+│   ├── services/         						# Serwisy do komunikacji z backendem (np. API)
+│   │   ├── APIService.js           	# Podstawowy serwis API do zarządzania żądaniami HTTP
+│   │   ├── AuthService.js          	# Serwis do autentykacji użytkownika (logowanie, rejestracja)
+│   │   ├── UserService.js          	# Serwis do zarządzania danymi użytkownika
+│   │   ├── AdvertisementsService.js 	# Serwis do zarządzania ogłoszeniami
+│   │   └── ...
+│   ├── utils/            						# Współdzielone funkcje pomocnicze
+│   │   ├── apiClient.js            	# Klient HTTP, np. Axios
+│   │   ├── tokenService.js         	# Zarządzanie tokenami (zapis/odczyt)
+│   │   └── ...
+├── assets/               						# Zasoby statyczne (obrazy, czcionki)
+│   └── ...
+└── app.json              						# Konfiguracja aplikacji
+
+
+
+
+
+

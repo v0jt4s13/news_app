@@ -1,10 +1,10 @@
 // Przykładowy komponent React
 import React from 'react';
-import './NewsItem.css';
+import './NewsPage.css';
 import he from 'he';
 
-// function NewsItem({ title, excerpt, imageUrl }) {}
-function NewsItem({ id, title, imageUrl, excerpt }) {
+// function NewsPage({ title, excerpt, imageUrl }) {}
+function NewsPage({ id, title, imageUrl, excerpt }) {
   let url = "/wiadomosci/" + id
   const decodedTitle = he.decode(title);
   // url+= "" + {id}
@@ -22,4 +22,4 @@ function NewsItem({ id, title, imageUrl, excerpt }) {
   );
 }
 
-export default NewsItem;
+export default NewsPage;
