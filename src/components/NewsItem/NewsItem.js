@@ -4,7 +4,7 @@ import './NewsItem.css';
 import he from 'he';
 
 // function NewsItem({ title, excerpt, imageUrl }) {}
-function NewsItem({ key, id, title, imageUrl, excerpt }) {
+function NewsItem({ id, title, imageUrl, excerpt }) {
   let url = "/wiadomosci/" + id
   const decodedTitle = he.decode(title);
   // url+= "" + {id}

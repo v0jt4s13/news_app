@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <header className="HomePage-header">
-				from HomePage header module<br></br>
+				<div className="module-head">from HomePage header module</div>
         <img src={logo} className="HomePage-logo" alt="logo" />
 				
         <ul>
@@ -26,7 +26,7 @@ function HomePage() {
             // Tworzenie listy elementów menu
             <li id={index}>
               <a href={item.url} target="_blank" rel="noopener noreferrer">
-                AAA-{item.name}
+                {item.name}
               </a>
             </li>
           ))}

@@ -9,23 +9,24 @@ import HomePage from './components/HomePage/HomePage.js';
 import PrettyJson from './components/PrettyJson/PrettyJson.js';
 import ArticlePage from './components/ArticlePage/ArticlePage.js';
 import { Link } from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
     <Router>
       <div>
         {/* Linki do nawigacji */}
-        from App nav module<br></br>
-        <nav>
-          <ul className="cl-ul">
-            <Link to="/"><li className="cl-li">Home</li></Link>
-            <Link to="/PrettyJson"><li className="cl-li">PrettyJson</li></Link>
-          </ul>
-        </nav>
+        <div className="module-head">from App nav module</div>
+        <ul>
+          <nav>
+            <Link className="cl-li" to="/"><li>Home</li></Link>
+            <Link className="cl-li" to="/json-formatter"><li>PrettyJson</li></Link>
+          </nav>
+        </ul>
 
         {/* Definicja tras */}
         <Routes>
-          <Route path="/wiadomosci/:id" element={<ArticlePage />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/PrettyJson" element={<PrettyJson />} />
         </Routes>
