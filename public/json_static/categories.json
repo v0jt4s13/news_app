@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "value": "automotive",
+      "label": "Automotive"
+    },
+    {
+      "id": 2,
+      "value": "realEstate",
+      "label": "Real Estate"
+    }
+  ]
