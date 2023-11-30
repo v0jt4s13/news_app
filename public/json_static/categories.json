@@ -1,12 +1,37 @@
 [
-    {
-      "id": 1,
-      "value": "automotive",
-      "label": "Automotive"
-    },
-    {
-      "id": 2,
-      "value": "realEstate",
-      "label": "Real Estate"
-    }
-  ]
+  {
+    "id": 1,
+    "value": "JobSeekers",
+    "label": "Szukam Pracy"
+  },
+  {
+    "id": 2,
+    "value": "Automotive",
+    "label": "Motoryzacja"
+  },
+  {
+    "id": 3,
+    "value": "Accomodation",
+    "label": "Mieszkania"
+  },
+  {
+    "id": 4,
+    "value": "Jobs",
+    "label": "Oferty Pracy"
+  },
+  {
+    "id": 5,
+    "value": "Business",
+    "label": "Biznes"
+  },
+  {
+    "id": 6,
+    "value": "BuyAndSell",
+    "label": "Kupno/Sprzedaż"
+  },
+  {
+    "id": 7,
+    "value": "Personal",
+    "label": "Drobne Ogłoszenia"
+  }
+]
