@@ -37,7 +37,7 @@ function FormPage() {
           name={field.name}
           required={field.required || false}
         >
-          <option value="" disabled selected>
+          <option value="" disabled defaultValue>
             Wybierz {field.label.toLowerCase()}
           </option>
           {field.options.map(option => (
@@ -82,7 +82,7 @@ function FormPage() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="category">Kategoria:</label>
         <select id="category" name="category" onChange={handleCategoryChange} required>
-          <option value="" disabled selected>
+          <option value="" disabled defaultValue>
             Wybierz kategorię
           </option>
           {categories.map(category => (

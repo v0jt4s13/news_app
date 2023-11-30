@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "value": "JobSeekers",
-    "label": "Szukam Pracy"
+    "label": "JobSeekers",
+    "value": "JobSeekers"
   },
   {
     "id": 2,
-    "value": "Automotive",
-    "label": "Motoryzacja"
+    "label": "Motoryzacja",
+    "value": "Automotive"
   },
   {
     "id": 3,
-    "value": "Accomodation",
-    "label": "Mieszkania"
+    "label": "Mieszkania",
+    "value": "Accomodation"
   },
   {
     "id": 4,
-    "value": "Jobs",
-    "label": "Oferty Pracy"
+    "label": "Oferty Pracy",
+    "value": "Jobs"
   },
   {
     "id": 5,
-    "value": "Business",
-    "label": "Biznes"
+    "label": "Biznes",
+    "value": "Business"
   },
   {
     "id": 6,
-    "value": "BuyAndSell",
-    "label": "Kupno/Sprzedaż"
+    "label": "Kupno/Sprzedaż",
+    "value": "BuyAndSell"
   },
   {
     "id": 7,
-    "value": "Personal",
-    "label": "Drobne Ogłoszenia"
+    "label": "Drobne Ogłoszenia",
+    "value": "Personal"
   }
 ]
