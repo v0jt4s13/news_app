@@ -6,19 +6,38 @@ function FormPage() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [formFields, setFormFields] = useState([]);
+  const [adsFormFields, getAdsFormFields] = useState([]);
 
   useEffect(() => {
     fetch('/json_static/categories.json')
       .then(response => response.json())
-      .then(data => setCategories(data))
+      .then(data => {
+        console.log("Dane z pliku", data)
+        setCategories(data)
+      })
+      .catch(error => console.error("Fetching categories failed:", error));
+  }, []);
+
+  useEffect(() => {
+    fetch('/json_static/forms-fields.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log("Dane z pliku", data)
+        getAdsFormFields(data)
+      })
       .catch(error => console.error("Fetching categories failed:", error));
   }, []);
 
   useEffect(() => {
     if (selectedCategory) {
-      fetch(`/json_static/${selectedCategory.toLowerCase()}Form.json`)
+      let category_file_name = "form-fields-" + selectedCategory.toLowerCase() + ".json";
+      console.log("Nazwa pliku category", category_file_name)
+      fetch(`/json_static/${category_file_name}`)
         .then(response => response.json())
-        .then(data => setFormFields(data))
+        .then(data => {
+          console.log("Dane z pliku categories", data)
+          setFormFields(data)
+        })
         .catch(error => console.error(`Fetching ${selectedCategory.toLowerCase()} form failed:`, error));
     }
   }, [selectedCategory]);
@@ -76,6 +95,10 @@ function FormPage() {
     // Dodaj tutaj logikę przesyłania danych na serwer lub zapisu do pliku JSON
   };
 
+  const sprawdzWarunek = (klucz) => {
+    return adsFormFields[0]?.ExistIn[klucz.toLowerCase()] || false;
+  };
+
   return (
     <div className="FormPage">
       <h2>Formularz Ogłoszenia</h2>
@@ -91,10 +114,31 @@ function FormPage() {
             </option>
           ))}
         </select>
+          +++++{adsFormFields.length}+++++++
+
+        {adsFormFields.length > 0 && (
+          <div>
+            <h3>{selectedCategory} - Formularz Ogłoszenia</h3>
+              {adsFormFields.map(field => (
+                <div key={field.id}>
+                  <label htmlFor={field.Field}>{field.Title}:</label>
+                  
+                  ++++++{field.ExistIn.selectedCategory}+++++
+
+                  {sprawdzWarunek(selectedCategory) && (
+                    <p>Warunek jest spełniony!</p>
+                    
+                  )}
+                  {renderFormField(field)}
+                </div>
+              ))}  
+              <button type="submit">Dodaj ogłoszenie</button>
+          </div> 
+        )}
 
         {formFields.length > 0 && (
           <div>
-            <h3>{selectedCategory} - Formularz Ogłoszenia</h3>
+            <h3>?????{selectedCategory} - Formularz Ogłoszenia</h3>
             {formFields.map(field => (
               <div key={field.id}>
                 <label htmlFor={field.name}>{field.label}:</label>
