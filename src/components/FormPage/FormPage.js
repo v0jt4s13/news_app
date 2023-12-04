@@ -47,6 +47,17 @@ function FormPage() {
   };
 
   const renderFormField = (field) => {
+    const isFieldAvailable =
+      selectedCategory &&
+      field.ExistIn &&
+      Object.prototype.hasOwnProperty.call(field.ExistIn, selectedCategory.toLowerCase()) &&
+      field.ExistIn[selectedCategory.toLowerCase()];
+  
+    if (!isFieldAvailable) {
+      // Jeśli pole nie jest dostępne w wybranej kategorii, nie renderuj go
+      return null;
+    }
+  
     // Renderowanie pola formularza w zależności od typu
     if (field.type === 'select' && field.options) {
       return (
@@ -96,7 +107,7 @@ function FormPage() {
   };
 
   const sprawdzWarunek = (klucz) => {
-    return adsFormFields[0]?.ExistIn[klucz.toLowerCase()] || false;
+    return adsFormFields[0]?.ExistIn[klucz?.toLowerCase()] || false;
   };
 
   return (
@@ -114,27 +125,40 @@ function FormPage() {
             </option>
           ))}
         </select>
-          +++++{adsFormFields.length}+++++++
+          Ilość pól w formularzu: {adsFormFields.length}
 
-        {adsFormFields.length > 0 && (
-          <div>
-            <h3>{selectedCategory} - Formularz Ogłoszenia</h3>
-              {adsFormFields.map(field => (
-                <div key={field.id}>
-                  <label htmlFor={field.Field}>{field.Title}:</label>
-                  
-                  ++++++{field.ExistIn.selectedCategory}+++++
+{adsFormFields.length > 0 && (
+  <div>
+    {console.log("Selected Category:", selectedCategory)}
+    <h3>{selectedCategory && `${selectedCategory} - Formularz Ogłoszenia`}</h3>
+    {adsFormFields.map(field => (
+      <div key={field.ID}>
+        {/* Usunięcie acs.subsite z przodu pełnej nazwy */}
+        <label htmlFor={field.Field}>{field.Title.replace('acs-subsite.', '').replace(/_/g, ' ').replace('Form', '')}:</label>
+        {/* Sprawdzenie typu pola i dostosowanie wyświetlania */}
+        {field.Type[1] === 'chaeckbox' || field.Type[1] === 'checkbox' ? (
+        <input type="checkbox" id={field.Field} name={field.Field} />
+        ) : field.Type[1] === 'select' ? (
+        <select id={field.Field} name={field.Field}>
+            {/* Dodaj tutaj opcje dla selecta */}
+          </select>
+        ) : (
+        <input
+          type="text"
+          id={field.Field}
+          name={field.Field}
+          placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
+          required={field.Req === 't'}  
+        />
+      )}
 
-                  {sprawdzWarunek(selectedCategory) && (
-                    <p>Warunek jest spełniony!</p>
-                    
-                  )}
-                  {renderFormField(field)}
-                </div>
-              ))}  
-              <button type="submit">Dodaj ogłoszenie</button>
-          </div> 
-        )}
+        {/* reszta kodu */}
+      </div>
+    ))}
+    <button type="submit">Dodaj ogłoszenie</button>
+  </div>
+)}
+
 
         {formFields.length > 0 && (
           <div>
