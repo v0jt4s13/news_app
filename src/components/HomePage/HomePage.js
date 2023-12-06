@@ -17,9 +17,9 @@ function HomePage() {
 	
   return (
     <div className="HomePage">
+      <div className="module-info">===&gt;from HomePage&lt;===</div>
       <header className="HomePage-header">
-				<div className="module-head">from HomePage header module</div>
-        <img src={logo} className="HomePage-logo" alt="logo" />
+				<img src={logo} className="HomePage-logo" alt="logo" />
 				
         <ul>
           {menuItems.map((item, index) => (
