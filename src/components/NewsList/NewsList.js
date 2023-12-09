@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NewsPage from '../NewsPage/NewsPage';
 
-//const endpoint = '/json_static/articles.json';
+// const endpoint = '/json_static/articles.json';
 const endpoint = 'https://londynek.net/v1/news';
+// const endpoint = 'http://localhost/v1/news';
 
 function NewsList() {
   const [articles, setArticles] = useState([]);
@@ -26,6 +27,7 @@ function NewsList() {
 
   return (
     <div className="NewsList">
+      <div className="module-info">===&gt;from NewsList&lt;===</div>
       {articles.map((news, index) => (
         <NewsPage
           key={index} // Dodaj klucz 'key' dla każdego elementu listy
