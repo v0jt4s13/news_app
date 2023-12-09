@@ -9,7 +9,7 @@ import HomePage from './components/HomePage/HomePage.js';
 import PrettyJson from './components/PrettyJson/PrettyJson.js';
 import ArticlePage from './components/ArticlePage/ArticlePage.js';
 import FormPage from './components/FormPage/FormPage.js'; // Dodano import FormPage
-// import './App.css';
+import './App.css';
 
 function App() {
   return (

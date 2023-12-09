@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NewsPage from '../NewsPage/NewsPage';
 
-const endpoint = '/json_static/articles.json';
-//const endpoint = 'https://londynek.net/v1/news';
+// const endpoint = '/json_static/articles.json';
+const endpoint = 'https://londynek.net/v1/news';
+// const endpoint = 'http://localhost/v1/news';
 
 function NewsList() {
   const [articles, setArticles] = useState([]);

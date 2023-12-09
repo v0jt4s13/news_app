@@ -537,11 +537,11 @@ hr.simple {
   background-color: rgba(0, 0, 0, .1);
 }
 hr.expand {
-  background: -owg-linear-gradient(left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
-  background: -webkit-linear-gradient(left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
-  background: -moz-linear-gradient(left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
-  background: -o-linear-gradient(left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
-  background: linear-gradient(left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
+  background: -owg-linear-gradient(to left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
+  background: -webkit-linear-gradient(to left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
+  background: -moz-linear-gradient(to left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
+  background: -o-linear-gradient(to left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
+  background: linear-gradient(to left,  #d1deec 0%,  #d1deec 35%,  #a3bdd9 35%,  #a3bdd9 65%,  #d1deec 65%,  #d1deec 100%);
   width: 100%;
   border: 0;
   height: 1px;
