@@ -1,0 +1,79 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Budowy i remonty",
+        "fields": [
+          { "id": 1, "name": "rodzajPrac", "label": "Rodzaj prac", "type": "text", "placeholder": "Np. remont łazienki" },
+          { "id": 2, "name": "szczegolyPrac", "label": "Szczegóły prac", "type": "textarea", "placeholder": "Opisz dokładnie prace do wykonania" },
+          { "id": 3, "name": "terminRealizacji", "label": "Termin realizacji", "type": "date" },
+          { "id": 4, "name": "kosztorys", "label": "Kosztorys", "type": "number", "placeholder": "Podaj szacowany koszt" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dom i ogród",
+        "fields": [
+          { "id": 5, "name": "rodzajNieruchomosci", "label": "Rodzaj nieruchomości", "type": "select", "options": ["dom", "mieszkanie", "działka"] },
+          { "id": 6, "name": "powierzchnia", "label": "Powierzchnia", "type": "number", "placeholder": "Podaj powierzchnię w metrach kwadratowych" },
+          { "id": 7, "name": "iloscPokoi", "label": "Ilość pokoi", "type": "number", "placeholder": "Podaj ilość pokoi" },
+          { "id": 8, "name": "wyposazenie", "label": "Wyposażenie", "type": "textarea", "placeholder": "Opisz wyposażenie nieruchomości" },
+          { "id": 9, "name": "opisOgrodu", "label": "Opis ogrodu", "type": "textarea", "placeholder": "Opisz ogrodzoną przestrzeń" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Finanse, podatki i prawo",
+        "fields": [
+          { "id": 10, "name": "typUsługi", "label": "Typ usługi", "type": "select", "options": ["doradztwo finansowe", "doradztwo podatkowe", "porady prawne"] },
+          { "id": 11, "name": "opisUsługi", "label": "Opis usługi", "type": "textarea", "placeholder": "Opisz świadczone usługi" },
+          { "id": 12, "name": "cena", "label": "Cena usługi", "type": "number", "placeholder": "Podaj cenę usługi" }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Edukacja",
+        "fields": [
+          { "id": 13, "name": "poziomNauczania", "label": "Poziom nauczania", "type": "select", "options": ["szkoła podstawowa", "szkoła średnia", "studia"] },
+          { "id": 14, "name": "przedmioty", "label": "Przedmioty", "type": "textarea", "placeholder": "Wymień przedmioty do nauczania" },
+          { "id": 15, "name": "cenaLekcji", "label": "Cena lekcji", "type": "number", "placeholder": "Podaj cenę za lekcję" }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Utrzymanie domu",
+        "fields": [
+          { "id": 16, "name": "typUtrzymania", "label": "Typ utrzymania", "type": "select", "options": ["sprzątanie", "ogrodnictwo", "konserwacja"] },
+          { "id": 17, "name": "czestotliwosc", "label": "Częstotliwość usługi", "type": "text", "placeholder": "Podaj częstotliwość (tygodniowo, miesięcznie itp.)" },
+          { "id": 18, "name": "cenaUslugi", "label": "Cena usługi", "type": "number", "placeholder": "Podaj cenę usługi" }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Branża Beauty",
+        "fields": [
+          { "id": 19, "name": "uslugiFryzjerskie", "label": "Usługi fryzjerskie", "type": "textarea", "placeholder": "Opisz oferowane usługi fryzjerskie" },
+          { "id": 20, "name": "uslugiKosmetyczne", "label": "Usługi kosmetyczne", "type": "textarea", "placeholder": "Opisz oferowane usługi kosmetyczne" },
+          { "id": 21, "name": "cennik", "label": "Cennik usług", "type": "textarea", "placeholder": "Podaj ceny usług" }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Zdrowie i medycyna",
+        "fields": [
+          { "id": 22, "name": "specjalizacja", "label": "Specjalizacja", "type": "text", "placeholder": "Podaj specjalizację" },
+          { "id": 23, "name": "cenaKonsultacji", "label": "Cena konsultacji", "type": "number", "placeholder": "Podaj cenę konsultacji" },
+          { "id": 24, "name": "dostepnosc", "label": "Dostępność", "type": "text", "placeholder": "Podaj godziny dostępności" }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Polskie szkoły, urzędy i organizacje",
+        "fields": [
+          { "id": 25, "name": "typInstytucji", "label": "Typ instytucji", "type": "select", "options": ["szkoła", "urząd", "organizacja"] },
+          { "id": 26, "name": "lokalizacja", "label": "Lokalizacja", "type": "text", "placeholder": "Podaj lokalizację" },
+          { "id": 27, "name": "opisInstytucji", "label": "Opis instytucji", "type": "textarea", "placeholder": "Opisz instytucję" }
+        ]
+      }
+    ]
+  }  
