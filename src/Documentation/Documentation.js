@@ -5,7 +5,7 @@ function Documentation() {
   return (
     <div>
       <header>
-        <h1>Moja Dokumentacja</h1>
+        <h1>Moja Dokumentacja</h1> 
       </header>
       <nav>
         <ul>
