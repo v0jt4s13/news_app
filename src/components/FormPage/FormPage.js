@@ -58,6 +58,21 @@ function FormPage() {
       return null;
     }
   
+    // Dodaj unikalne klasy dla każdego pola
+    const commonClass = 'commonClass';
+    let fieldClasses = commonClass;
+  
+    // Dodaj klasy w zależności od typu pola
+    if (field.type === 'text') {
+      fieldClasses += ' fci';
+    } else if (field.type === 'select') {
+      fieldClasses += ' fci';
+    } else if (field.type === 'textarea') {
+      fieldClasses += ' fci field-type-textarea';
+    } else if (field.type === 'button') {
+      fieldClasses += ' btn';
+    }
+  
     // Renderowanie pola formularza w zależności od typu
     if (field.type === 'select' && field.options) {
       return (
@@ -66,6 +81,7 @@ function FormPage() {
           id={field.name}
           name={field.name}
           required={field.required || false}
+          className={fieldClasses}
         >
           <option value="" disabled defaultValue>
             Wybierz {field.label.toLowerCase()}
@@ -84,6 +100,7 @@ function FormPage() {
           id={field.name}
           name={field.name}
           required={field.required || false}
+          className={fieldClasses}
         />
       );
     } else {
@@ -95,6 +112,7 @@ function FormPage() {
           name={field.name}
           placeholder={field.placeholder || ''}
           required={field.required || false}
+          className={fieldClasses}
         />
       );
     }
@@ -111,11 +129,11 @@ function FormPage() {
   };
 
   return (
-    <div className="FormPage">
+    <div className="FormPage" className='jd-form jd-form-cf'>
       <h2>Formularz Ogłoszenia</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="category">Kategoria:</label>
-        <select id="category" name="category" onChange={handleCategoryChange} required>
+        <select id="category" name="category" onChange={handleCategoryChange} required className='jd-form jd-form-cf'>
           <option value="" disabled defaultValue>
             Wybierz kategorię
           </option>
@@ -148,7 +166,7 @@ function FormPage() {
           id={field.Field}
           name={field.Field}
           placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
-          required={field.Req === 't'}  
+          required={field.Req === 't'}
         />
       )}
 
@@ -158,8 +176,6 @@ function FormPage() {
     <button type="submit">Dodaj ogłoszenie</button>
   </div>
 )}
-
-
         {formFields.length > 0 && (
           <div>
             <h3>?????{selectedCategory} - Formularz Ogłoszenia</h3>
@@ -169,7 +185,7 @@ function FormPage() {
                 {renderFormField(field)}
               </div>
             ))}
-            <button type="submit">Dodaj Ogłoszenie</button>
+            <button type="submit" class="btn">Dodaj Ogłoszenie</button>
           </div>
         )}
       </form>

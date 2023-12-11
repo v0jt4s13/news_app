@@ -22,6 +22,7 @@ function App() {
             <Link className="cl-li" to="/"><li>Home</li></Link>
             <Link className="cl-li" to="/json-formatter"><li>PrettyJson</li></Link>
             <Link className="cl-li" to="/form"><li>Ogłoszenia</li></Link> {/* Dodano link do Ogłoszeń */}
+            <button class="btn">ABCDEF  </button>
           </nav>
         </ul>
 
