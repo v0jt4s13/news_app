@@ -1,17 +1,27 @@
+/**
+ * Główny plik aplikacji React.
+ * Odpowiada za renderowanie głównego komponentu (`App`) w elemencie o id 'root' w dokumencie HTML.
+ *
+ * @file
+ * @summary Główny plik aplikacji React.
+ */
+
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; // Import klienta ReactDOM
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Utworzenie korzenia dla ReactDOM i przypisanie do elementu o id 'root'
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Renderowanie głównego komponentu App w elemencie root
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Pomiar wydajności aplikacji i raportowanie wyników
+// (Możesz zakomentować lub usunąć, jeśli nie korzystasz z raportowania wydajności)
 reportWebVitals();

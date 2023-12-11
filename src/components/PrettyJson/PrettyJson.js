@@ -1,22 +1,43 @@
+/**
+ * Komponent PrettyJson.
+ * Komponent do formatowania i wyświetlania JSON. Pozwala użytkownikowi wybrać plik JSON
+ * lub wprowadzić JSON ręcznie, a następnie prezentuje sformatowany wynik.
+ *
+ * @component
+ * @summary Komponent do formatowania i wyświetlania JSON.
+ */
+
 import React, { useState } from 'react';
 import './PrettyJson.css';
 
+/**
+ * Funkcja PrettyJson.
+ * Funkcja reprezentująca komponent PrettyJson.
+ *
+ * @function
+ * @return {JSX.Element} Element JSX reprezentujący PrettyJson.
+ */
 function PrettyJson() {
+  // Stan dla przechowywania wprowadzonego JSON, sformatowanego JSON i nazwy wybranego pliku
   const [inputJson, setInputJson] = useState('');
   const [formattedJson, setFormattedJson] = useState('');
   const [selectedFile, setSelectedFile] = useState('');
 
-  const jsonFiles = ['menu.json', 'articles.json', 'forms-fields.json']; // Lista plików
+  // Lista dostępnych plików JSON
+  const jsonFiles = ['menu.json', 'articles.json', 'forms-fields.json'];
 
+  // Obsługa zmiany wprowadzonego JSON
   const handleInputChange = (event) => {
     setInputJson(event.target.value);
   };
 
+  // Obsługa zmiany wybranego pliku JSON
   const handleFileChange = async (event) => {
     const filename = event.target.value;
     setSelectedFile(filename);
     if (filename) {
       try {
+        // Ładowanie danych z wybranego pliku JSON
         const response = await fetch(`/json_static/${filename}`);
         const data = await response.json();
         setInputJson(JSON.stringify(data));
@@ -29,6 +50,7 @@ function PrettyJson() {
     }
   };
 
+  // Obsługa przesłania formularza do sformatowania wprowadzonego JSON
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
@@ -40,10 +62,12 @@ function PrettyJson() {
     }
   };
 
+  // Renderowanie komponentu PrettyJson
   return (
     <div>
       <h2>JSON Formatter</h2>
       <form onSubmit={handleSubmit}>
+        {/* Wybór pliku JSON z listy dostępnych plików */}
         <label>
           Choose JSON File:
           <select value={selectedFile} onChange={handleFileChange}>
@@ -54,20 +78,24 @@ function PrettyJson() {
           </select>
         </label>
         <p>
-					<textarea 
-          value={inputJson} 
-          onChange={handleInputChange}
-          placeholder="Wpisz lub wklej JSON tutaj"
-        	></textarea>
-				</p>
+          {/* Wprowadzanie lub wklejanie JSON do pola tekstowego */}
+          <textarea 
+            value={inputJson} 
+            onChange={handleInputChange}
+            placeholder="Wpisz lub wklej JSON tutaj"
+          ></textarea>
+        </p>
+        {/* Przycisk do przesłania formularza */}
         <p><button type="submit">Send</button></p>
       </form>
+      {/* Wyświetlanie sformatowanego JSON */}
       <pre><code>{formattedJson}</code></pre>
     </div>
   );
 }
 
 export default PrettyJson;
+
 
 
 
