@@ -30,7 +30,7 @@ function App() {
     <Router>
       <div>
         {/* Linki do nawigacji */}
-        <div className="module-head">from App nav module</div>
+        <div className="module-info">===&gt;from App&lt;===</div>
         <ul>
           <nav>
             {/* Link do strony głównej */}
