@@ -13,10 +13,10 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import HomePage from './components/HomePage/HomePage.js';
-import PrettyJson from './components/PrettyJson/PrettyJson.js';
-import ArticlePage from './components/ArticlePage/ArticlePage.js';
-import FormPage from './components/FormPage/FormPage.js'; // Dodano import FormPage
+import HomePage from './pages/HomePage/HomePage.js';
+import PrettyJson from './pages/PrettyJson/PrettyJson.js';
+import ArticlePage from './pages/ArticlePage/ArticlePage.js';
+import FormPage from './pages/FormPage/FormPage.js'; // Dodano import FormPage
 import './App.css';
 
 /**
@@ -46,7 +46,7 @@ function App() {
         {/* Definicja tras */}
         <Routes>
           {/* Trasa do wyświetlania pojedynczego artykułu */}
-          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/wiadomosci/:id" element={<ArticlePage />} />
           {/* Trasa do strony z ogłoszeniami */}
           <Route path="/form" element={<FormPage />} /> {/* Dodano trasę do Ogłoszeń */}
           {/* Domyślna trasa prowadząca do strony głównej */}

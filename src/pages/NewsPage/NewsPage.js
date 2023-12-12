@@ -5,7 +5,7 @@ import he from 'he';
 
 // function NewsPage({ title, excerpt, imageUrl }) {}
 function NewsPage({ id, title, imageUrl, excerpt }) {
-  let url = "/article/" + id
+  let url = "/wiadomosci/" + id
   const decodedTitle = he.decode(title);
   // url+= "" + {id}
   // console.log('id:' + id)
