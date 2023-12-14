@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+<<<<<<< HEAD:src/components/ArticlePage/ArticlePage.js
 
 /**
  * Funkcja pomocnicza do dekodowania HTML entities.
@@ -11,6 +12,13 @@ function decodeHtml(html) {
   txt.innerHTML = html;
   return txt.value;
 }
+=======
+import ArticleTitle from '../../components/ArticleTitle';
+import ArticleImage from '../../components/ArticleImage';
+import ArticleHeadline from '../../components/ArticleHeadline';
+import ArticleBody from '../../components/ArticleBody';
+import ArticleInfo from '../../components/ArticleInfo';
+>>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/ArticlePage/ArticlePage.js
 
 /**
  * Komponent reprezentujący stronę z pojedynczym artykułem.
@@ -51,12 +59,10 @@ function ArticlePage() {
             <div class="jd-content-3-2">
               <section class="jd-article" data-style="margin-right: 8px;">
                 <article>
-                  <h1 data-style="font-size: 2.4rem; line-height: 3.1rem; margin: 0px 0px 16px; font-weight: 400;">{article.title}</h1>
-                  <div class="article-info">
-                    <time datetime="{article.release_date}" title="{article.release_date}">{article.release_date}</time>
-                    <span class="comments-info" title="Ilość komentarzy: 0" data-style="display:none"><i class="material-icons"></i>
-                    <span id="article-top-comments-count">0</span></span>
-                  </div>
+                  <ArticleTitle title={article.title} />
+                 
+                  <ArticleInfo release_date={article.release_date} comments_count={article.comments_count} />
+                  
                   <div class="article-tags">
                     <i class="material-icons"></i>
                     <ul>
@@ -65,13 +71,15 @@ function ArticlePage() {
                       <li class=""><h2 data-style="font-weight: unset;"><a href="/wiadomosci/cat?cat_id=40&amp;tag_id=362">Społeczeństwo</a></h2></li>
                     </ul>
                   </div>
+
+                  <ArticleImage url={article.images[0].url} alt={article.images[0].alt} />
                   <figure class="article-image-top">
                     <img src={`${article.images[0].url}`} alt={article.images[0].alt} />
                     <figcaption>{article.images[0].alt}</figcaption>
                   </figure>
-                  <div class="article-headline">{article.headline}</div>
                   
-                  <div class="article-content ckeditor cke-article" dangerouslySetInnerHTML={{ __html: decodeHtml(article.news_content) }}></div>
+                  <ArticleHeadline headline={article.headline} />
+                  <ArticleBody body={article.news_content} />
                   
                   <div class="article-author">PA Media / Jagoda S.</div>
                   <div class="article-bottom social-links">

@@ -66,7 +66,26 @@ function FormPage() {
       // Jeśli pole nie jest dostępne w wybranej kategorii, nie renderuj go
       return null;
     }
+<<<<<<< HEAD:src/components/FormPage/FormPage.js
 
+=======
+  
+    // Dodaj unikalne klasy dla każdego pola
+    const commonClass = 'commonClass';
+    let fieldClasses = commonClass;
+  
+    // Dodaj klasy w zależności od typu pola
+    if (field.type === 'text') {
+      fieldClasses += ' fci';
+    } else if (field.type === 'select') {
+      fieldClasses += ' fci';
+    } else if (field.type === 'textarea') {
+      fieldClasses += ' fci field-type-textarea';
+    } else if (field.type === 'button') {
+      fieldClasses += ' btn';
+    }
+  
+>>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/FormPage/FormPage.js
     // Renderowanie pola formularza w zależności od typu
     if (field.type === 'select' && field.options) {
       return (
@@ -75,6 +94,7 @@ function FormPage() {
           id={field.name}
           name={field.name}
           required={field.required || false}
+          className={fieldClasses}
         >
           <option value="" disabled defaultValue>
             Wybierz {field.label.toLowerCase()}
@@ -93,6 +113,7 @@ function FormPage() {
           id={field.name}
           name={field.name}
           required={field.required || false}
+          className={fieldClasses}
         />
       );
     } else {
@@ -104,6 +125,7 @@ function FormPage() {
           name={field.name}
           placeholder={field.placeholder || ''}
           required={field.required || false}
+          className={fieldClasses}
         />
       );
     }
@@ -123,11 +145,11 @@ function FormPage() {
 
   // Renderowanie strony
   return (
-    <div className="FormPage">
+    <div className="FormPage" className='jd-form jd-form-cf'>
       <h2>Formularz Ogłoszenia</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="category">Kategoria:</label>
-        <select id="category" name="category" onChange={handleCategoryChange} required>
+        <select id="category" name="category" onChange={handleCategoryChange} required className='jd-form jd-form-cf'>
           <option value="" disabled defaultValue>
             Wybierz kategorię
           </option>
@@ -137,6 +159,7 @@ function FormPage() {
             </option>
           ))}
         </select>
+<<<<<<< HEAD:src/components/FormPage/FormPage.js
         Ilość pól w formularzu: {adsFormFields.length}
 
         {adsFormFields.length > 0 && (
@@ -170,6 +193,41 @@ function FormPage() {
             <button type="submit">Dodaj ogłoszenie</button>
           </div>
         )}
+=======
+          Ilość pól w formularzu: {adsFormFields.length}
+
+{adsFormFields.length > 0 && (
+  <div>
+    {console.log("Selected Category:", selectedCategory)}
+    <h3>{selectedCategory && `${selectedCategory} - Formularz Ogłoszenia`}</h3>
+    {adsFormFields.map(field => (
+      <div key={field.ID}>
+        {/* Usunięcie acs.subsite z przodu pełnej nazwy */}
+        <label htmlFor={field.Field}>{field.Title.replace('acs-subsite.', '').replace(/_/g, ' ').replace('Form', '')}:</label>
+        {/* Sprawdzenie typu pola i dostosowanie wyświetlania */}
+        {field.Type[1] === 'chaeckbox' || field.Type[1] === 'checkbox' ? (
+        <input type="checkbox" id={field.Field} name={field.Field} />
+        ) : field.Type[1] === 'select' ? (
+        <select id={field.Field} name={field.Field}>
+            {/* Dodaj tutaj opcje dla selecta */}
+          </select>
+        ) : (
+        <input
+          type="text"
+          id={field.Field}
+          name={field.Field}
+          placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
+          required={field.Req === 't'}
+        />
+      )}
+
+        {/* reszta kodu */}
+      </div>
+    ))}
+    <button type="submit">Dodaj ogłoszenie</button>
+  </div>
+)}
+>>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/FormPage/FormPage.js
         {formFields.length > 0 && (
           <div>
             <h3>?????{selectedCategory} - Formularz Ogłoszenia</h3>
@@ -179,7 +237,7 @@ function FormPage() {
                 {renderFormField(field)}
               </div>
             ))}
-            <button type="submit">Dodaj Ogłoszenie</button>
+            <button type="submit" class="btn">Dodaj Ogłoszenie</button>
           </div>
         )}
       </form>
