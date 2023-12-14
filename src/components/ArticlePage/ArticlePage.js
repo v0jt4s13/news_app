@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+/**
+ * Funkcja pomocnicza do dekodowania HTML entities.
+ * @param {string} html - Kod HTML do zdekodowania.
+ * @returns {string} - Zdekodowany tekst.
+ */
 function decodeHtml(html) {
   var txt = document.createElement("textarea");
   txt.innerHTML = html;
   return txt.value;
 }
 
+/**
+ * Komponent reprezentujący stronę z pojedynczym artykułem.
+ * @component
+ * @returns {JSX.Element} - Element JSX reprezentujący stronę z artykułem.
+ */
 function ArticlePage() {
+  // Pobranie ID artykułu z parametrów URL
   let { id } = useParams();
+  // Stan przechowujący dane o artykule
   const [article, setArticle] = useState(null);
 
+  // Efekt pobierający dane o artykule z API przy zmianie ID
   useEffect(() => {
     // Budowanie URL zależnie od ID artykułu
     const articleUrl = `https://londynek.net/v1/news/${id}`;
@@ -20,7 +33,7 @@ function ArticlePage() {
     fetch(articleUrl)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        console.log(data);
         // Zakładam, że odpowiedź z API zawiera pojedynczy artykuł
         setArticle(data.data[0]); // Ustawianie pierwszego elementu z odpowiedzi jako artykuł
       })
@@ -29,6 +42,7 @@ function ArticlePage() {
       });
   }, [id]); // Zależność od ID, aby ponownie pobrać dane przy zmianie ID
 
+  // Renderowanie komponentu
  return (
     <div>
       {article ? (

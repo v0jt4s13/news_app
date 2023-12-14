@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 
 import './FileList.css';
 
+/**
+ * Komponent reprezentujący listę plików.
+ */
 function FileList() {
   const [fileList, setFileList] = useState([]);
 
+  // Efekt pobierający listę plików z pliku JSON
   useEffect(() => {
-    // Wczytanie listy plików
     fetch('/json_static/fileList.json')
       .then(response => response.json())
       .then(data => setFileList(data))
@@ -19,6 +22,7 @@ function FileList() {
       {/* ... inne elementy UI ... */}
       <ul>
         {fileList.map((file, index) => (
+          // Renderowanie elementu listy dla każdego pliku
           <li key={index}>{file}</li>
         ))}
       </ul>
