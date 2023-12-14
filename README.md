@@ -75,6 +75,49 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### npm install he
 
+#Files:
+##FileList (FileList.js):
+A component representing a list of files.
+It retrieves a list of files from a JSON file and renders them.
+
+##FormPage (FormPage.js):
+A component representing a page with a classified ad form.
+It fetches categories and form fields from JSON files.
+It renders the form based on the selected category.
+
+##HomePage (HomePage.js):
+A component representing the home page.
+It fetches menu items from a JSON file.
+It displays the logo, menu, list of news, and footer.
+
+##NewsList (NewsList.js):
+A component representing a list of articles.
+It fetches article data from an API and renders the NewsPage component for each article.
+
+##NewsPage (NewsPage.js):
+A component representing a single news item.
+It renders the title, image, short description, and a link to the full article.
+
+##PrettyJson (PrettyJson.js):
+A component for formatting and displaying JSON.
+It allows the user to choose a JSON file or manually input JSON.
+It handles changes in the entered JSON and renders the formatted result.
+
+#Pages:
+
+##App (App.js):
+The main component of the React application.
+It defines navigation and routes for individual components.
+It uses React Router for navigation between pages.
+
+##ArticlePage (ArticlePage.js):
+A page displaying a single article.
+It fetches article data from the API based on the ID.
+It renders components related to the article content.
+
+
+
+
 
 ## Struktura katalogów i plików projektu
 app/
