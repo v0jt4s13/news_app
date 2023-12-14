@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import NewsPage from '../NewsPage/NewsPage';
 
-// const endpoint = '/json_static/articles.json';
+// Endpoint do pobierania danych artykułów
 const endpoint = 'https://londynek.net/v1/news';
-// const endpoint = 'http://localhost/v1/news';
 
+/**
+ * Komponent reprezentujący listę artykułów.
+ * @component
+ * @returns {JSX.Element} - Element JSX reprezentujący listę artykułów.
+ */
 function NewsList() {
+  // Stan przechowujący listę artykułów
   const [articles, setArticles] = useState([]);
 
+  // Efekt pobierający dane artykułów z API przy pierwszym renderowaniu
   useEffect(() => {
     // Pobierz dane z endpointa
     const fetchData = async () => {
@@ -29,6 +35,7 @@ function NewsList() {
     <div className="NewsList">
       <div className="module-info">===&gt;from NewsList&lt;===</div>
       {articles.map((news, index) => (
+        // Renderuj komponent NewsPage dla każdego artykułu
         <NewsPage
           key={index} // Dodaj klucz 'key' dla każdego elementu listy
           id={news.id}
@@ -42,4 +49,3 @@ function NewsList() {
 }
 
 export default NewsList;
-

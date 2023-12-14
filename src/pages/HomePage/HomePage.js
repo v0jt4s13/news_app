@@ -1,5 +1,3 @@
-HomePage.js
-
 import React, { useState, useEffect } from 'react';
 import logo from '../../londynek_logo_square_192.png';
 import './HomePage.css';
@@ -10,25 +8,34 @@ import NewsList from '../NewsList/NewsList.js';
  * 
  * Wykorzystuje Hooki useState i useEffect do zarządzania stanem
  * oraz efektem ładowania danych menu z pliku JSON.
+ * @component
+ * @returns {JSX.Element} - Element JSX reprezentujący stronę domową.
  */
 function HomePage() {
-  const endpoint = '/json_static/menu.json'
+  // Ścieżka do pliku JSON z danymi menu
+  const endpoint = '/json_static/menu.json';
+  // Stan przechowujący elementy menu
   const [menuItems, setMenuItems] = useState([]);
-  
-  // Hook efektu do ładowania danych menu z pliku JSON przy pierwszym renderowaniu
+
+  // Efekt ładowania danych menu z pliku JSON przy pierwszym renderowaniu
   useEffect(() => {
-    fetch(endpoint) // Ścieżka do pliku JSON
-      .then(response => response.json()) // Parsowanie odpowiedzi jako JSON
-      .then(data => setMenuItems(data)) // Aktualizacja stanu menuItems danymi z JSON
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(data => setMenuItems(data))
       .catch(error => console.error("Fetching menu failed:", error));
   }, []); // Pusta tablica jako drugi argument oznacza, że efekt uruchomi się tylko raz
-	
+
   return (
     <div className="HomePage">
+      {/* Informacja debugująca */}
       <div className="module-info">===&gt;from HomePage&lt;===</div>
+      
+      {/* Nagłówek strony */}
       <header className="HomePage-header">
+        {/* Logo strony */}
         <img src={logo} className="HomePage-logo" alt="logo" />
-				
+        
+        {/* Lista elementów menu */}
         <ul>
           {menuItems.map((item, index) => (
             // Tworzenie listy elementów menu
@@ -40,13 +47,15 @@ function HomePage() {
           ))}
         </ul>
       </header>
-      
+
+      {/* Sekcja z listą newsów */}
       <h1>Lista newsów</h1>
       <main>
         <NewsList />
-        {/* Możesz dodać więcej komponentów NewsPage tutaj <h1>{NewsPage.key}</h1> nie dziala ;/ */}
+        {/* Możesz dodać więcej komponentów NewsPage tutaj <h1>{NewsPage.key}</h1> nie działa ;/ */}
       </main>
-      
+
+      {/* Stopka strony */}
       <footer>
         FileList
       </footer>
@@ -55,4 +64,3 @@ function HomePage() {
 }
 
 export default HomePage;
-

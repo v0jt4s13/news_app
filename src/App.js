@@ -30,7 +30,7 @@ function App() {
     <Router>
       <div>
         {/* Linki do nawigacji */}
-        <div className="module-info">===&gt;from App&lt;===</div>
+        <div className="module-info">===⇒from App&lt;===</div>
         <ul>
           <nav>
             {/* Link do strony głównej */}
@@ -39,7 +39,7 @@ function App() {
             <Link className="cl-li" to="/json-formatter"><li>PrettyJson</li></Link>
             {/* Link do strony z ogłoszeniami */}
             <Link className="cl-li" to="/form"><li>Ogłoszenia</li></Link> {/* Dodano link do Ogłoszeń */}
-            <button class="btn">ABCDEF  </button>
+            <button className="btn">ABCDEF  </button>
           </nav>
         </ul>
 

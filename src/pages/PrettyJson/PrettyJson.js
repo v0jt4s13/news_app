@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import './PrettyJson.css';
+
 /**
  * Komponent PrettyJson.
  * Komponent do formatowania i wyświetlania JSON. Pozwala użytkownikowi wybrać plik JSON
@@ -5,17 +8,6 @@
  *
  * @component
  * @summary Komponent do formatowania i wyświetlania JSON.
- */
-
-import React, { useState } from 'react';
-import './PrettyJson.css';
-
-/**
- * Funkcja PrettyJson.
- * Funkcja reprezentująca komponent PrettyJson.
- *
- * @function
- * @return {JSX.Element} Element JSX reprezentujący PrettyJson.
  */
 function PrettyJson() {
   // Stan dla przechowywania wprowadzonego JSON, sformatowanego JSON i nazwy wybranego pliku

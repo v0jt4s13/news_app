@@ -12,14 +12,10 @@ import he from 'he';
  * @returns {JSX.Element} - Element JSX reprezentujący pojedynczą wiadomość.
  */
 function NewsPage({ id, title, imageUrl, excerpt }) {
-<<<<<<< HEAD:src/components/NewsPage/NewsPage.js
   // Budowanie URL do pełnego artykułu na podstawie ID
-  let url = "/article/" + id;
+  let url = "/wiadomosci/" + id;
 
   // Dekodowanie tytułu wiadomości z encji HTML
-=======
-  let url = "/wiadomosci/" + id
->>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/NewsPage/NewsPage.js
   const decodedTitle = he.decode(title);
 
   return (

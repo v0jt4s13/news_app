@@ -7,9 +7,13 @@ import './FormPage.css';
  * @returns {JSX.Element} - Element JSX reprezentujący formularz ogłoszenia.
  */
 function FormPage() {
+  // Stan przechowujący dostępne kategorie
   const [categories, setCategories] = useState([]);
+  // Stan przechowujący wybraną kategorię
   const [selectedCategory, setSelectedCategory] = useState(null);
+  // Stan przechowujący pola formularza ogłoszenia dla wybranej kategorii
   const [formFields, setFormFields] = useState([]);
+  // Stan przechowujący pola ogłoszenia
   const [adsFormFields, getAdsFormFields] = useState([]);
 
   // Efekt pobierający kategorie z pliku JSON
@@ -66,14 +70,11 @@ function FormPage() {
       // Jeśli pole nie jest dostępne w wybranej kategorii, nie renderuj go
       return null;
     }
-<<<<<<< HEAD:src/components/FormPage/FormPage.js
 
-=======
-  
     // Dodaj unikalne klasy dla każdego pola
     const commonClass = 'commonClass';
     let fieldClasses = commonClass;
-  
+
     // Dodaj klasy w zależności od typu pola
     if (field.type === 'text') {
       fieldClasses += ' fci';
@@ -84,8 +85,7 @@ function FormPage() {
     } else if (field.type === 'button') {
       fieldClasses += ' btn';
     }
-  
->>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/FormPage/FormPage.js
+
     // Renderowanie pola formularza w zależności od typu
     if (field.type === 'select' && field.options) {
       return (
@@ -159,7 +159,6 @@ function FormPage() {
             </option>
           ))}
         </select>
-<<<<<<< HEAD:src/components/FormPage/FormPage.js
         Ilość pól w formularzu: {adsFormFields.length}
 
         {adsFormFields.length > 0 && (
@@ -193,41 +192,6 @@ function FormPage() {
             <button type="submit">Dodaj ogłoszenie</button>
           </div>
         )}
-=======
-          Ilość pól w formularzu: {adsFormFields.length}
-
-{adsFormFields.length > 0 && (
-  <div>
-    {console.log("Selected Category:", selectedCategory)}
-    <h3>{selectedCategory && `${selectedCategory} - Formularz Ogłoszenia`}</h3>
-    {adsFormFields.map(field => (
-      <div key={field.ID}>
-        {/* Usunięcie acs.subsite z przodu pełnej nazwy */}
-        <label htmlFor={field.Field}>{field.Title.replace('acs-subsite.', '').replace(/_/g, ' ').replace('Form', '')}:</label>
-        {/* Sprawdzenie typu pola i dostosowanie wyświetlania */}
-        {field.Type[1] === 'chaeckbox' || field.Type[1] === 'checkbox' ? (
-        <input type="checkbox" id={field.Field} name={field.Field} />
-        ) : field.Type[1] === 'select' ? (
-        <select id={field.Field} name={field.Field}>
-            {/* Dodaj tutaj opcje dla selecta */}
-          </select>
-        ) : (
-        <input
-          type="text"
-          id={field.Field}
-          name={field.Field}
-          placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
-          required={field.Req === 't'}
-        />
-      )}
-
-        {/* reszta kodu */}
-      </div>
-    ))}
-    <button type="submit">Dodaj ogłoszenie</button>
-  </div>
-)}
->>>>>>> a7c2008adbb7fb669aca2e060e1ac3a53724253c:src/pages/FormPage/FormPage.js
         {formFields.length > 0 && (
           <div>
             <h3>?????{selectedCategory} - Formularz Ogłoszenia</h3>
