@@ -75,7 +75,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### npm install he
 
+# - - - - - - - - - - - - - - - - - - - 
+
 # Files:
+
 ## FileList (FileList.js):
 A component representing a list of files.
 It retrieves a list of files from a JSON file and renders them.
@@ -116,7 +119,7 @@ It fetches article data from the API based on the ID.
 It renders components related to the article content.
 
 
-
+# - - - - - - - - - - - - - - - - - - - 
 
 
 ## Struktura katalogów i plików projektu
