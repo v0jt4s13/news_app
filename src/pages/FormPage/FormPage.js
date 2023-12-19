@@ -1,6 +1,5 @@
 // components/FormPage/FormPage.js
 import React, { useState, useEffect } from 'react';
-import './FormPage.css';
 
 function FormPage() {
   const [categories, setCategories] = useState([]);
@@ -134,7 +133,7 @@ function FormPage() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="category">Kategoria:</label>
         <select id="category" name="category" onChange={handleCategoryChange} required className='jd-form jd-form-cf'>
-          <option value="" disabled defaultValue>
+          <option value="" disabled selected hidden>
             Wybierz kategorię
           </option>
           {categories.map(category => (
@@ -143,49 +142,33 @@ function FormPage() {
             </option>
           ))}
         </select>
-          Ilość pól w formularzu: {adsFormFields.length}
-
-{adsFormFields.length > 0 && (
-  <div>
-    {console.log("Selected Category:", selectedCategory)}
-    <h3>{selectedCategory && `${selectedCategory} - Formularz Ogłoszenia`}</h3>
-    {adsFormFields.map(field => (
-      <div key={field.ID}>
-        {/* Usunięcie acs.subsite z przodu pełnej nazwy */}
-        <label htmlFor={field.Field}>{field.Title.replace('acs-subsite.', '').replace(/_/g, ' ').replace('Form', '')}:</label>
-        {/* Sprawdzenie typu pola i dostosowanie wyświetlania */}
-        {field.Type[1] === 'chaeckbox' || field.Type[1] === 'checkbox' ? (
-        <input type="checkbox" id={field.Field} name={field.Field} />
-        ) : field.Type[1] === 'select' ? (
-        <select id={field.Field} name={field.Field}>
-            {/* Dodaj tutaj opcje dla selecta */}
-          </select>
-        ) : (
-        <input
-          type="text"
-          id={field.Field}
-          name={field.Field}
-          placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
-          required={field.Req === 't'}
-        />
-      )}
-
-        {/* reszta kodu */}
-      </div>
-    ))}
-    <button type="submit">Dodaj ogłoszenie</button>
-  </div>
-)}
-        {formFields.length > 0 && (
+        {selectedCategory && (
           <div>
-            <h3>?????{selectedCategory} - Formularz Ogłoszenia</h3>
-            {formFields.map(field => (
-              <div key={field.id}>
-                <label htmlFor={field.name}>{field.label}:</label>
-                {renderFormField(field)}
+            <h3>{`${selectedCategory} - Formularz Ogłoszenia`}</h3>
+            {adsFormFields.map(field => (
+              <div key={field.ID}>
+                {/* Usunięcie acs.subsite z przodu pełnej nazwy */}
+                <label htmlFor={field.Field}>{field.Title.replace('acs-subsite.', '').replace(/_/g, ' ').replace('Form', '')}:</label>
+                {/* Sprawdzenie typu pola i dostosowanie wyświetlania */}
+                {field.Type[1] === 'chaeckbox' || field.Type[1] === 'checkbox' ? (
+                  <input type="checkbox" id={field.Field} name={field.Field} />
+                ) : field.Type[1] === 'select' ? (
+                  <select id={field.Field} name={field.Field}>
+                    {/* Dodaj tutaj opcje dla selecta */}
+                  </select>
+                ) : (
+                  <input
+                    type="text"
+                    id={field.Field}
+                    name={field.Field}
+                    placeholder={`Wprowadź ${field.Title.replace('acs-subsite.', '').replace(/_/g, ' ')}`}
+                    required={field.Req === 't'}
+                  />
+                )}
+                {/* reszta kodu */}
               </div>
             ))}
-            <button type="submit" class="btn">Dodaj Ogłoszenie</button>
+            <button type="submit">Dodaj ogłoszenie</button>
           </div>
         )}
       </form>
